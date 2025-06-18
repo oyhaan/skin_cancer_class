@@ -56,7 +56,7 @@ pip install tensorflow scikit-learn numpy pandas seaborn matplotlib xgboost pill
 1. **Clone the repository:**
 
    ```bash
-   git clone [repository-url]
+   git clone [https://github.com/oyhaan/skin_cancer_class.git]
    cd skin-cancer-classification
    ```
 
