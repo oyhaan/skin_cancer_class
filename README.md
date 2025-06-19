@@ -1,5 +1,3 @@
-Below is the updated `README.md` file for your project, "Early Cancer Detection in Africa Using Machine Learning," written in Markdown format. It is tailored to your Formative 1 proposal and follows the structure of the Rinda Project template. The file incorporates the latest requirements, including five neural network instances with distinct model save names (`model1.h5`, `model2.h5`, `model3.h5`, `model4.h5`, `model4_best.h5`, `optimized_cnn_model_4.h5`, and `optimized_xgb_model.json`) as specified in the updated code snippets. It includes a project overview, dataset description, setup instructions, implementation details, results table for neural network experiments, final model comparison, and instructions for loading the best model. Metrics are placeholders, to be filled in after running the notebook.
-
 # Skin Cancer Classification Using Machine Learning
 
 [Video Description of The Project]([https://youtu.be/S1Bh7UXitzU]) ->  https://youtu.be/S1Bh7UXitzU
