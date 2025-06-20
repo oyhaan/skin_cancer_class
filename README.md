@@ -1,5 +1,3 @@
-Below is the updated `README.md` file for your project, "Early Cancer Detection in Africa Using Machine Learning," written in Markdown format. It is tailored to your Formative 1 proposal and follows the structure of the Rinda Project template. The file incorporates the latest requirements, including five neural network instances with distinct model save names (`model1.h5`, `model2.h5`, `model3.h5`, `model4.h5`, `model4_best.h5`, `optimized_cnn_model_4.h5`, and `optimized_xgb_model.json`) as specified in the updated code snippets. It includes a project overview, dataset description, setup instructions, implementation details, results table for neural network experiments, final model comparison, and instructions for loading the best model. Metrics are placeholders, to be filled in after running the notebook.
-
 # Skin Cancer Classification Using Machine Learning
 
 [Video Description of The Project]([https://youtu.be/S1Bh7UXitzU]) ->  https://youtu.be/S1Bh7UXitzU
@@ -116,10 +114,10 @@ The table below details five neural network training instances, showing hyperpar
 
 | Training Instance                | Optimizer | Learning Rate | Dropout Rate | Regularizer | Epochs (Stopped) | Number of Layers | Test Accuracy  | F1-score (macro) | Precision (macro) | Recall (macro) |
 | -------------------------------- | --------- | ------------- | ------------ | ----------- | ---------------- | ---------------- | -------------| ---------------- | ----------------- | -------------- |
-| Instance 1 (Simple)              | Adam      | 0.001         | 0.0          | None        | 50               | 2                | 0.33         | 0.14           | 0.6           | 0.08          | 
-| Instance 2 (Adam + L2)           | Adam      | 0.001         | 0.0          | L2 (0.01)   | 50               | 2                | 0.68            | 0.81             | 0.68            | 1          | 
-| Instance 3 (RMSprop + Dropout)   | RMSprop   | 0.001         | 0.2          | L2(0.001)   | 50               | 2                |0.40           | 0.48             | 0.6            | 0.4|
-| Instance 4 (Adam + Early Stop)   | Adam      | 0.001         | 0.0          | L1(0.01)    | 50               | 2                | 0.51           | 0.61            | 0.67            | 0.56          
+| Instance 1 (Simple)              | Adam      | 0.001         | 0.0          | None        | 50               | 2                | 0.68            | 0.81             | 0.68            | 1          |
+| Instance 2 (Adam + L2)           | Adam      | 0.001         | 0.3          | L2    | 50               | 2                | 0.66           | 0.79             | 0.68            | 0.94          | 
+| Instance 3 (RMSprop + Dropout)   | RMSprop   | 0.001         | 0.2          | L1   | 50               | 2                |0.68          | 0.81            | 0.68            | 1.00|
+| Instance 4 (Adam + Early Stop)   | Adam      | 0.005        | 0.4         | L2    | 50               | 2                | 0.40           | 0.46          | 0.60         | 0.37        | 
 
 ### Analysis of Results & Key Findings
 
