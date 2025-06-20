@@ -5,6 +5,7 @@
 
 ## Problem Statement
 Late skin cancer diagnosis in Africa leads to high mortality rates due to limited diagnostic access, high treatment costs, and socio-cultural barriers. In 2020, skin cancer accounted for approximately 10,000 deaths annually in Africa, with over 90% of cases diagnosed at advanced stages (GLOBOCAN 2020). Existing screening efforts are constrained by funding, reach, and stigma, underscoring the need for an accessible, low-cost, and accurate tool for early detection in underserved regions.
+* Video Presentation: [https://www.loom.com/share/e6e8729657d74da5be7af81ba8b692b0?sid=e169e634-2daf-4637-a387-e9a1c2aa1445](https://www.loom.com/share/e6e8729657d74da5be7af81ba8b692b0?sid=e169e634-2daf-4637-a387-e9a1c2aa1445)
 
 ## Dataset
 The dataset for this project is sourced from the **ISIC (International Skin Imaging Collaboration) Archive**, a publicly available collection of dermoscopic and clinical images of skin lesions:
@@ -35,10 +36,9 @@ Below is the summary of five neural network training instances evaluated on the 
 | Training Instance            | Optimizer | Learning Rate | Dropout | Regularizer | Early Stopping | Layers | Test Accuracy | F1-score | Precision | Recall |
 |------------------------------|-----------|---------------|---------|-------------|----------------|--------|---------------|----------|-----------|--------|
 | **1. Simple Baseline**       | Default   | 0.001         | 0.0     | None        | No             | 2      | 0.68          | 0.81     | 0.68      | 1.00   |
-| **2. Adam + L2**             | Adam      | 0.001         | 0.3     | L2          | No             | 2      | 0.66          | 0.79     | 0.68      | 0.94   |
-| **3. RMSprop + L1 + Dropout**| RMSprop   | 0.001         | 0.2     | L1          | No             | 2      | 0.68          | 0.81     | 0.68      | 1.00   |
-| **4. Adam + Early Stopping** | Adam      | 0.005         | 0.4     | L2          | Yes            | 2      | 0.40          | 0.46     | 0.60      | 0.37   |
-| **5. Combined Optimized**    | Adam      | 0.0001        | 0.5     | L2 (0.01)   | Yes            | 3      | 0.72          | 0.84     | 0.75      | 0.92   |
+| **2. Adam + L2**             | Adam      | 0.001         | 0.3     | L2          | 5           | 2      | 0.66          | 0.79     | 0.68      | 0.94   |
+| **3. RMSprop + L1 + Dropout**| RMSprop   | 0.001         | 0.2     | L1          | 7           | 2      | 0.68          | 0.81     | 0.68      | 1.00   |
+| **4. Adam + Early Stopping** | Adam      | 0.005         | 0.4     | L2          |10         | 2      | 0.40          | 0.46     | 0.60      | 0.37   |
 
 **Key Findings:**
 - **Best Neural Configuration:** Instance 5 (low learning rate, dropout 0.5, L2 regularization, early stopping) achieved the highest balance of accuracy (0.72) and robustness (F1 0.84).
