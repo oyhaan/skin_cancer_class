@@ -1,4 +1,4 @@
-````markdown
+
 # Skin Cancer Classification Using Machine Learning
 
 **Project Name:** Skin Cancer Classification Using Machine Learning
@@ -59,7 +59,7 @@ Below is the summary of five neural network training instances evaluated on the 
    ```bash
    git clone https://github.com/oyhaan/skin_cancer_class.git
    cd skin_cancer_class
-````
+
 
 2. Install dependencies:
 
@@ -74,14 +74,35 @@ Below is the summary of five neural network training instances evaluated on the 
 ## Loading the Best Model
 
 ```python
-import tensorflow as tf
-# Load the optimized CNN (Instance 5)
-best_cnn = tf.keras.models.load_model('saved_models/optimized_cnn_model_4.h5')
-best_cnn.summary()
+def make_predictions(model_path, test_gen):
+    # Load XGBoost model
+    model = joblib.load(model_path)
 
-# Load the optimized XGBoost
-import joblib
-best_xgb = joblib.load('saved_models/optimized_xgb_model.pkl')
+    # Preprocess test_gen data (flatten images, no normalization to match Stage 6)
+    data = []
+    target_size = (172, 251)  # Match training preprocessing
+    test_gen.reset()  # Reset generator to start
+    for i in range(len(test_gen.filenames)):
+        # Get image from generator
+        img_array = next(test_gen)[0][0]  # Extract single image (batch_size=1)
+        img = Image.fromarray((img_array * 255).astype(np.uint8)).resize(target_size)
+        img_array = np.array(img).flatten()  # Flatten, no normalization
+        data.append(img_array)
+
+    # Convert to numpy array for scikit-learn
+    X_test = np.array(data)
+
+    # Make predictions
+    prob = model.predict_proba(X_test)[:, 1]  # Probability for positive class
+    predictions = (prob > 0.5).astype(int)
+    return model, predictions
+
+best_model_path = '/content/drive/MyDrive/saved_models/optimized_xgb_model.pkl'
+best_model, predictions = make_predictions(best_model_path, test_gen)
+
+filenames = test_gen.filenames
+for i in range(min(10, len(predictions))):
+    print(f"Image: {filenames[i]}, Predicted: {'malignant' if predictions[i] else 'benign'}")
 ```
 
 ## Repository Contents
