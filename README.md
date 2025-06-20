@@ -1,7 +1,7 @@
 # Skin Cancer Classification Using Machine Learning
 
-[Video Description of The Project]([https://youtu.be/S1Bh7UXitzU]) ->  https://youtu.be/S1Bh7UXitzU
-[Dataset source]([https://youtu.be/S1Bh7UXitzU]) -> https://gallery.isic-archive.com/#!/topWithHeader/onlyHeaderTop/gallery?filter=%5B%5D
+- [Video Description of The Project]([https://youtu.be/S1Bh7UXitzU]) ->  https://youtu.be/S1Bh7UXitzU
+- [Dataset source]([https://youtu.be/S1Bh7UXitzU]) -> https://gallery.isic-archive.com/#!/topWithHeader/onlyHeaderTop/gallery?filter=%5B%5D
 
 ## Problem Statement
 
